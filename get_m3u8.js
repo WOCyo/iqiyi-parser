@@ -1,6 +1,6 @@
 const {exec} = require('child_process')
 
-// exec_cmd('python3 t.py https://v.qq.com/x/page/f0032noyz1m.html').then(console.log).catch(console.error)
+// exec_cmd('python3 tencent.py https://v.qq.com/x/page/f0032noyz1m.html').then(console.log).catch(console.error)
 function exec_cmd(cmd) {
   // console.log('exec_cmd: ', cmd)
   return new Promise((resolve, reject) => {
