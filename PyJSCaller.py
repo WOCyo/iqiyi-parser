@@ -495,7 +495,8 @@ def pipe_eval(jsfile):
     global NODEPATH
     js_ctx = [os.path.join(NODEPATH, 'node'), jsfile]
 
-    res = subprocess.check_output(js_ctx, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+    # res = subprocess.check_output(js_ctx, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+    res = subprocess.check_output(js_ctx) # 这样mac不会报错
     return eval(res)
 
 def setNodePath(path):
