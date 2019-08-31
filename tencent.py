@@ -239,10 +239,10 @@ class Tencent(BasicParser):
 
     def parse(self, url, quality):
 
-        # text = self.request(url)
-        # bs4 = BeautifulSoup(text, features='html.parser')
-        # video_info_rex = re.compile('var VIDEO_INFO\s*=\s*({.+?})\s*</script>')
-        # video_info = json.loads(video_info_rex.search(text).group(1))
+        text = self.request(url)
+        bs4 = BeautifulSoup(text, features='html.parser')
+        video_info_rex = re.compile('var VIDEO_INFO\s*=\s*({.+?})\s*</script>')
+        video_info = json.loads(video_info_rex.search(text).group(1))
 
         s1, s2 = splittype(url)
         host, path = splithost(s2)
@@ -256,8 +256,7 @@ class Tencent(BasicParser):
         vid = seg_path[-1].split('.html')[0]
 
 
-        # title = video_info['title']
-        title = 'title does not matter'
+        title = video_info['title']
         if self.cookie_str:
             self.auth_refresh()
 
